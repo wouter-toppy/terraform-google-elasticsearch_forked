@@ -17,8 +17,8 @@ data "template_file" "node-startup-script" {
 }
 
 module "kibana" {
-  source                    = "GoogleCloudPlatform/managed-instance-group/google"
-  version                   = "1.1.13"
+  source                    = "git@github.com:sadasystems/terraform-google-managed-instance-group.git?ref=feature/google-beta-updates"
+  #version                   = "1.1.13"
   project                   = "${var.project == "" ? data.google_client_config.current.project : var.project}"
   region                    = "${var.region}"
   zonal                     = false

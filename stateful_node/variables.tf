@@ -51,6 +51,11 @@ variable "num_nodes" {
   default     = 1
 }
 
+variable "image_family" {
+  description = "Disk image family to use."
+  default     = "elasticsearch-5"
+}
+
 variable "boot_image_family" {
   description = "Disk image family to use."
   default     = "elasticsearch-6"
