@@ -43,5 +43,5 @@ module "kibana" {
 }
 
 data "google_compute_region_instance_group" "default" {
-  self_link = "${module.kibana.*.instance_group}"
+  self_link = "${module.kibana.*.region_instance_group}"
 }
