@@ -39,16 +39,7 @@ module "kibana" {
   startup_script            = "${data.template_file.node-startup-script.rendered}"
   wait_for_instances        = true
   http_health_check         = false
-  update_strategy           = "ROLLING_UPDATE"
 
-  rolling_update_policy = [
-    {
-      type                  = "PROACTIVE"
-      minimal_action        = "REPLACE"
-      max_surge_fixed       = "${length(var.zones)}"
-      max_unavailable_fixed = 0
-    },
-  ]
 }
 
 data "google_compute_region_instance_group" "default" {
