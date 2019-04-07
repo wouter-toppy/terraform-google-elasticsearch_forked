@@ -49,7 +49,6 @@ module "node" {
   service_port_name         = "http"
   startup_script            = "${data.template_file.node-startup-script.rendered}"
   wait_for_instances        = true
-  update_strategy           = "NONE"
   http_health_check         = false
 }
 
