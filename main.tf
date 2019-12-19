@@ -26,7 +26,7 @@ data "template_file" "node-startup-script" {
 }
 
 module "node" {
-  source = "git@github.com:sadasystems/terraform-google-managed-instance-group.git?ref=feature/google-beta-updates"
+  source = "git::git@github.com:wouter-toppy/terraform-google-managed-instance-group_forked.git?ref=toppy"
 
   #version                   = "1.1.13"
   project                   = "${var.project == "" ? data.google_client_config.current.project : var.project}"
